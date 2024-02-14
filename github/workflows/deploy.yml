@@ -17,9 +17,10 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      - name: Deploy to Server
-        run: |
-          # Access secrets using the ${{ secrets.SECRET_NAME }} syntax
-          echo "Deploying to server using API key: ${{ secrets.API_KEY }}"
-          rsync -r --delete-after ./dist/ user@your-server:/path/to/deployment/
+      - name: Deploy to AWS
+        run: aws s3 sync ./dist/ s3://your-s3-bucket/
+
+     
+
+
 
