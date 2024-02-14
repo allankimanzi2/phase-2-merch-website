@@ -1,0 +1,25 @@
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Deploy to Server
+        run: |
+          # Access secrets using the ${{ secrets.SECRET_NAME }} syntax
+          echo "Deploying to server using API key: ${{ secrets.API_KEY }}"
+          rsync -r --delete-after ./dist/ user@your-server:/path/to/deployment/
+
