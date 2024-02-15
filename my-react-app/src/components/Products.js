@@ -6,7 +6,7 @@ export default function Products() {
   const [onChange, setOnchange] = useState(false)
 
   useEffect(() =>{
-    fetch("http://localhost:3001/Tshirts")
+    fetch("http://localhost:3000/Tshirts")
     .then(resp => resp.json())
     .then(data =>{
       setProducts(data)

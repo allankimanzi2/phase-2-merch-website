@@ -8,7 +8,7 @@ export default function ReviewProduct({product,onChange, setOnchange}) {
   function reviewProduct(event){
     event.preventDefault()
     
-    fetch(`http://localhost:3001/Tshirts/${product.id}`,{
+    fetch(`http://localhost:3000/Tshirts/${product.id}`,{
       method: 'PATCH',
       headers: {"Content-Type":"application/json" },
       body: JSON.stringify({

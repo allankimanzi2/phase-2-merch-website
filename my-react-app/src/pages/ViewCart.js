@@ -10,7 +10,7 @@ export default function ViewCart() {
   const [onChange, setOnChange] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3001/Tshirts")
+    fetch("http://localhost:3000/Tshirts")
       .then(resp => resp.json())
       .then(data => {
         const filteredProducts = data.filter((product) => product.is_inCart === true);

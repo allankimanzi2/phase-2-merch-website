@@ -16,7 +16,7 @@ export default function UpdateProductPage() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/Tshirts/${id}`);
+        const response = await fetch(`http://localhost:3000/Tshirts/${id}`);
         if (!response.ok) {
           throw new Error('Failed to fetch product');
         }

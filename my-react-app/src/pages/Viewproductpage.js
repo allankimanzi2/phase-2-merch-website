@@ -13,7 +13,7 @@ export default function ViewProductPage() {
   const [onChange, setOnChange] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/Tshirts/${id}`)
+    fetch(`http://localhost:3000/Tshirts/${id}`)
       .then(resp => {
         if (!resp.ok) {
           throw new Error('Failed to fetch product');

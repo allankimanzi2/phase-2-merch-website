@@ -30,7 +30,7 @@ const checkAdd = insidecart ? "btn btn-danger" : "btn btn-success"
           text: "Your product has been deleted.",
           icon: "success"
         });
-        fetch(`http://localhost:3001/Tshirts/${product.id}`,{
+        fetch(`http://localhost:3000/Tshirts/${product.id}`,{
       method: 'DELETE'
     })
     .then(resp => resp.json())
@@ -51,7 +51,7 @@ const checkAdd = insidecart ? "btn btn-danger" : "btn btn-success"
   }
 
   function handleCart(){
-    fetch(`http://localhost:3001/Tshirts/${product.id}`,{
+    fetch(`http://localhost:3000/Tshirts/${product.id}`,{
     method: 'PATCH',
     headers: {"Content-Type":"application/json" },
     body: JSON.stringify({

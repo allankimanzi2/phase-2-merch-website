@@ -15,7 +15,7 @@ export default function AddProductPage() {
   function submitProduct(event) {
     event.preventDefault();
 
-    fetch(`http://localhost:3001/Tshirts`, {
+    fetch(`http://localhost:3000/Tshirts`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
