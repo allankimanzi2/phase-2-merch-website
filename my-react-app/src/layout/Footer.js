@@ -1,75 +1,73 @@
-import React,{useState} from 'react'
-import Swal from 'sweetalert2'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function UpdateProduct({product,onChange, setOnchange }) {
-  const [name, setName] = useState()
-  const[description, setDescription] = useState()
-  const[image_url, setImageUrl] = useState()
-  const [price, setPrice] = useState()
-
-  console.log(product)
-
-  function productSubmit(event){
-    event.preventDefault()
-
-    fetch(`http://localhost:3001/Tshirts/${product.id}`,{
-      method: 'PATCH',
-      headers: {"Content-Type":"application/json" },
-      body: JSON.stringify({
-        name: name,
-        description: description,
-        image_url: image_url,
-        price: price,
-        is_inCart:false})
-    })
-    .then(resp => resp.json())
-    .then(data => {
-      setOnchange(!onChange)
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Product Updated Successfully!",
-        showConfirmButton: false,
-        timer: 1500
-      });
-    })
-    .catch((error) => {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'We have an error reaching our servers!',
-        
-      })
-    })
-    setName("")
-    setPrice("")
-    setDescription("")
-    setImageUrl("")
-  }
+export default function Footer() {
   return (
-    <div className='container mt-5'>
-      <h3>UPDATE</h3>
-      <div>
-        <form onSubmit={productSubmit}>
-        <div className="mb-3">
-                <label className="form-label">Name</label>
-                <input type="text" value={name || product.name} onChange={e=>setName(e.target.value)} className="form-control" required />
+    <div className='mt-3'>
+       <footer className="text-white text-center text-lg-start bg-primary">
+        <div className="container p-4">
+          <div className="row mt-4">
+            <div className="col-lg-4 col-md-12 mb-4 mb-md-0">
+              <h5 className="text-uppercase mb-4">Reach out</h5>
+              <p>
+              We'd be delighted to hear from you. You can find us below on all our social media platforms.
+              </p>
+              <div className='container row'>
+                <a href="www.linkedin.com/in/allan-kim-35b55024b" target="_blank" className='col-md-3'>
+                  <i className="fa fa-linkedin text-light" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/kimesh_kim/" target="blank" className='col-md-3' >
+                  <i className="fa fa-instagram text-light" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/allankimanzi2" target="blank" className='col-md-3'>
+                  <i className="fa fa-github text-light" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
-            <div className="mb-3">
-                <label className="form-label">Description</label>
-                <input type="text" value={description || product.description}  onChange={e=>setDescription(e.target.value)} className="form-control" required />
+            <div id = "contacts" className="col-lg-4 col-md-6 mb-4 mb-md-0">
+              <h5 className="text-uppercase mb-4 pb-1">CONTACTS</h5>
+              <ul className="fa-ul ms-2">
+                <li className="mb-3">
+                  <span className="fa-li"><i className="fa fa-home"></i></span><span className="ms-2">Nairobi street, Nairobi, Kenya</span>
+                </li>
+                <li className="mb-3">
+                  <span className="fa-li"><i className="fa fa-envelope"></i></span><span className="ms-2">allankim457@gmail.com</span>
+                </li>
+                <li className="mb-3">
+                  <span className="fa-li"><i className="fa fa-phone"></i></span><span className="ms-2">+254786666767</span>
+                </li>
+              </ul>
             </div>
-            <div className="mb-3">
-                <label className="form-label">Image url</label>
-                <input type="url" value={image_url || product.image_url}  onChange={e=>setImageUrl(e.target.value)} className="form-control" required />
+
+
+
+            <div className="col-lg-4 col-md-6 mb-4 mb-md-0">
+              <h5 className="text-uppercase mb-4">Opening hours</h5>
+
+              <table className="table text-center text-white">
+                <tbody className="font-weight-normal">
+                  <tr>
+                    <td>Mon - Thu:</td>
+                    <td>9am - 6pm</td>
+                  </tr>
+                  <tr>
+                    <td>Fri - Sat:</td>
+                    <td>9am - 5pm</td>
+                  </tr>
+                  <tr>
+                    <td>Sunday:</td>
+                    <td>10am - 4pm</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div className="mb-3">
-                <label className="form-label">Price</label>
-                <input type="number" value={price || product.price}  onChange={e=>setPrice(e.target.value)} className="form-control" required />
-            </div>
-            <button type="submit" className="btn btn-success">Update</button>
-        </form>
-      </div>
+          </div>
+        </div>
+        <div className="text-center p-3 bg-primary">
+          © 2024 Copyright:
+          <Link className="text-white" to="/">Bandwagon.com</Link>
+        </div>
+</footer>
     </div>
   )
 }

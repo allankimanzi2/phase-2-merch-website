@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Contacts() {
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
   return (
-    <div>
+    
+    <div id="Contacts" className={isDarkMode ? 'dark-mode' : 'light-mode'} >
+    <button type="button" onClick={toggleDarkMode} className="mode-toggle-btn btn btn-primary">
+      {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+    </button>
       
 <section className="ftco-section">
 <div className="container">
@@ -69,7 +79,7 @@ export default function Contacts() {
           <span className="fa fa-phone">&nbsp;&nbsp;</span>
           </div>
           <div className="text pl-3">
-          <p><span>Phone:</span> +</p>
+          <p><span>Phone:</span> + 254 718 074 885</p>
           </div>
         </div>
         <div className="dbox w-100 d-flex align-items-center">
@@ -77,7 +87,7 @@ export default function Contacts() {
           <span className="fa fa-paper-plane">&nbsp;&nbsp;</span>
           </div>
           <div className="text pl-3">
-          <p><span>Email:</span> </p>
+          <p><span>Email:</span> rowlandswanderi@gmail.com</p>
           </div>
         </div>
         <div className="dbox w-100 d-flex align-items-center">

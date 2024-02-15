@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b4c9e18b.css",
+    "main.js": "/static/js/main.1fdb045e.js",
+    "static/js/787.2283c512.chunk.js": "/static/js/787.2283c512.chunk.js",
+    "static/media/Daco_1823518.png": "/static/media/Daco_1823518.1630909a3064e276d750.png",
+    "static/media/fall-band-t-shirts-4-.jpg": "/static/media/fall-band-t-shirts-4-.c268370a4c28daa95957.jpg",
+    "static/media/bandwagonLogo-removebg-preview.png": "/static/media/bandwagonLogo-removebg-preview.94f5422297df4c541c93.png",
+    "static/media/t_the-beatles9241-removebg-preview.png": "/static/media/t_the-beatles9241-removebg-preview.2fdd9502bc9331bb0995.png",
+    "static/media/Metallica-removebg-preview.png": "/static/media/Metallica-removebg-preview.374c6746d254d98cdac2.png",
+    "index.html": "/index.html",
+    "main.b4c9e18b.css.map": "/static/css/main.b4c9e18b.css.map",
+    "main.1fdb045e.js.map": "/static/js/main.1fdb045e.js.map",
+    "787.2283c512.chunk.js.map": "/static/js/787.2283c512.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4c9e18b.css",
+    "static/js/main.1fdb045e.js"
+  ]
+}
